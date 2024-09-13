@@ -9,15 +9,17 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { CommonModule } from '@angular/common';
 import { DataElement } from '../../models/models';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-edit-element-dialog',
   templateUrl: './edit-element-dialog.component.html',
-  styles: [],
+  styleUrls: ['./edit-element-dialog.component.scss'],
   standalone: true,
   imports: [
     CommonModule,
     FormsModule,
+    MatButtonModule,
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
