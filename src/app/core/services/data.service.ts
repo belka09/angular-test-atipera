@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { PeriodicElement } from '../../shared/models/models';
+import { DataElement } from '../../shared/models/models';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataService {
-  private ELEMENT_DATA: PeriodicElement[] = [
+  private ELEMENT_DATA: DataElement[] = [
     { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
     { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
     { position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li' },
@@ -20,13 +20,13 @@ export class DataService {
 
   constructor() {}
 
-  getElements(): Promise<PeriodicElement[]> {
+  getElements(): Promise<DataElement[]> {
     return new Promise((resolve) => {
       resolve([...this.ELEMENT_DATA]);
     });
   }
 
-  updateElement(updatedElement: PeriodicElement): void {
+  updateElement(updatedElement: DataElement): void {
     this.ELEMENT_DATA = this.ELEMENT_DATA.map((element) =>
       element.position === updatedElement.position
         ? { ...updatedElement }

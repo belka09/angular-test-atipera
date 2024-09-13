@@ -1,4 +1,4 @@
-export interface PeriodicElement {
+export interface DataElement {
   position: number;
   name: string;
   weight: number;

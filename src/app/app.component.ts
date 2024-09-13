@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
 import { EditElementDialogComponent } from './shared/components/edit-element-dialog/edit-element-dialog.component';
 import { Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
-import { PeriodicElement } from './shared/models/models';
+import { DataElement } from './shared/models/models';
 import { DataService } from './core/services/data.service';
 
 @Component({
@@ -34,8 +34,8 @@ export class AppComponent implements OnInit {
     'symbol',
     'actions',
   ];
-  dataSource: PeriodicElement[] = [];
-  filteredData: PeriodicElement[] = [];
+  dataSource: DataElement[] = [];
+  filteredData: DataElement[] = [];
   filterValue: string = '';
   private filterSubject: Subject<string> = new Subject<string>();
 
@@ -68,7 +68,7 @@ export class AppComponent implements OnInit {
     );
   }
 
-  editElement(element: PeriodicElement): void {
+  editElement(element: DataElement): void {
     const dialogRef = this.dialog.open(EditElementDialogComponent, {
       width: '300px',
       data: element,

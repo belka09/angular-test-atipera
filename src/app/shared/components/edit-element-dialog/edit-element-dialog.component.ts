@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { CommonModule } from '@angular/common';
-import { PeriodicElement } from '../../models/models';
+import { DataElement } from '../../models/models';
 
 @Component({
   selector: 'app-edit-element-dialog',
@@ -24,11 +24,11 @@ import { PeriodicElement } from '../../models/models';
   ],
 })
 export class EditElementDialogComponent {
-  editedElement: PeriodicElement;
+  editedElement: DataElement;
 
   constructor(
     public dialogRef: MatDialogRef<EditElementDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: PeriodicElement
+    @Inject(MAT_DIALOG_DATA) public data: DataElement
   ) {
     this.editedElement = { ...data };
   }
